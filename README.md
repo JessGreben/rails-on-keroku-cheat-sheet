@@ -1,4 +1,4 @@
-## rails-on-keroku-cheat-sheet
+## rails-on-heroku-cheat-sheet
 
 ### Generate New Rails app
     rails new app-name
