@@ -10,7 +10,7 @@
     rails generate model Post title:string body:text published:boolean
 #### Add Column to Existing Model
     rails generate migration AddFieldToModel field:type
-### Database
+### Database Inital
 #### Initial database setup
     rake db:setup
 #### Update to Latest Migration
@@ -21,6 +21,13 @@
     rake db:create
 #### Column Types
     :primary_key, :string, :text, :integer, :float, :decimal, :datetime, :timestamp, :time, :date, :binary, :boolean
+### Database Maintenance
+#### Reset database and reload current schema
+    rake db:reset db:migrate
+#### Destroy your db, create a new db and migrate current schema
+    rake db:drop db:create db:migrate
+#### Rails4, delete all contents on DB and recreate the schema from schema.rb file
+    rake db:schema:load
     
 ### [Heroku](https://devcenter.heroku.com/articles/getting-started-with-rails5)
 #### Create an app on Heroku
@@ -29,6 +36,8 @@
     git push heroku master
 #### Migrate the db
     heroku run rake db:migrate
+#### Seed the db
+    heroku run rake db:seed
 #### Visit app in the browser
     heroku open
 #### Visit logs
